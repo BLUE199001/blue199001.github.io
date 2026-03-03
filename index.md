@@ -36,7 +36,6 @@
 * Ensemble Semi-supervised Entity Alignment via Cycle-Teaching.(AAAI 2022)(**CCF A**)
 * Improved sparse representation based on local preserving projection for the fault diagnosis of multivariable system.(SCIS 2021)(**CCF A**)
 * The input pattern problem on deep learning applied to signal analysis and processing to achieve fault diagnosis.(SCIS 2019)(**CCF A**)
-
 * MRCLQR: A Framework for Logical Query Reasoning Based on Multi-information Relation Constraints.(CIKM 2025)(**CCF B**)
 * Concept-aware embedding for logical query reasoning over knowledge graphs.(IPM 2025)(**CCF B**) 
 * MRCLQR: A Framework for Logical Query Reasoning Based on Multi-information Relation Constraints.(CIKM 2025)(**CCF B**)
