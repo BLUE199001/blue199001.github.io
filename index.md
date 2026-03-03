@@ -6,10 +6,9 @@
 
 
 
-### 1. Contact
-jfqu@ruc.edu.cn
+### 1. Research Direction
 
-### 2. Research Interests and Selected Papers
+### 2. Published Papers
 
 #### 2025 
 
