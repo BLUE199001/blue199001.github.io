@@ -1,97 +1,162 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.title }}</title>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-      /* 核心：限制整体页面的最大宽度，调小这个数值可以进一步缩窄 */
-      .inner, .outer {
-        max-width: 800px; 
-        margin: 0 auto;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      
-      /* 极简 Header：减少 padding 压缩高度 */
-      header { 
-        padding: 10px 0; /* 从 20px 减小到 10px */
-        background-color: #082bc7; /* 确保背景色可见 */
-      }
-      header h1 { 
-        font-size: 1.2rem; /* 减小标题字号 */
-        margin: 0; 
-        color: white;
-      }
+        :root {
+            --primary-color: #003366; /* 人大蓝 */
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --sidebar-width: 300px;
+        }
 
-      /* 个人信息栏布局 */
-      .profile-container {
-        display: flex;
-        align-items: flex-start;
-        gap: 25px;
-        padding: 20px 0; /* 减少内边距 */
-        border-bottom: 1px solid #eee;
-        margin-bottom: 20px;
-      }
-      
-      /* 图片样式 */
-      .profile-pic {
-        width: 140px; /* 稍微调小一点 */
-        height: auto;
-        border-radius: 4px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        display: block;
-      }
-      
-      .info-text h1 { margin: 0 0 8px 0; font-size: 2.5em; }
-      .info-text p { margin: 2px 0; color: #555; font-size: 1.5em; }
-      
-      /* 极简 Footer：减少高度 */
-      footer { 
-        margin-top: 30px; 
-        padding: 10px 0; /* 减少 padding */
-        border-top: 1px solid #eee;
-        color: #999; 
-        font-size: 0.75em; 
-        background-color: #082bc7;
-      }
+        body {
+            font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-      @media (max-width: 600px) {
-        .profile-container { flex-direction: column; align-items: center; text-align: center; }
-      }
-    </style>
-  </head>
+        /* 顶部装饰条 */
+        header {
+            height: 4px;
+            background: var(--primary-color);
+            width: 100%;
+        }
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Jianfeng Qu, Renmin University of China</h1>
-      </div>
-    </header>
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            gap: 40px;
+            padding: 0 20px;
+            flex-grow: 1;
+        }
 
-    <div id="main_content_wrap">
-      <section id="main_content" class="inner">
+        /* 侧边栏布局 */
+        .sidebar {
+            width: var(--sidebar-width);
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 40px;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 10px; /* 采用稍微圆角的方形，更显现代感 */
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #eee;
+        }
+
+        .sidebar h2 { margin: 10px 0 5px; color: var(--primary-color); font-size: 1.5rem; }
+        .sidebar p { margin: 5px 0; font-size: 0.9rem; color: #666; }
         
-        <div class="profile-container">
-          <img src="{{ '/assets/avatar.jpg' | relative_url }}" alt="Profile" class="profile-pic">
-          
-          <div class="info-text">
-            <h1>瞿剑峰 (Jianfeng Qu)</h1>
-            <p><strong>职位：</strong>副教授，硕士生导师</p>
-            <p><strong>单位：</strong>中国人民大学 智慧治理学院</p>
-            <p><strong>邮箱：</strong><a href="mailto:jfqu@ruc.edu.cn">jfqu@ruc.edu.cn</a></p>
-            <p><strong>地址：</strong>中国 · 江苏 · 苏州</p>
-          </div>
+        .contact-info {
+            margin-top: 20px;
+            text-align: left;
+            font-size: 0.85rem;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        .contact-item { display: flex; align-items: center; margin-bottom: 8px; }
+        .contact-item strong { width: 50px; color: var(--primary-color); }
+
+        /* 主内容区 */
+        main {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Markdown 内容样式美化 */
+        h3 { 
+            border-left: 5px solid var(--primary-color); 
+            padding-left: 15px; 
+            margin-top: 40px;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+        h3:first-of-type { margin-top: 0; }
+        
+        h4 { color: #555; margin-bottom: 10px; border-bottom: 1px solid #eee; }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+
+        /* 论文展示特殊样式 */
+        main li {
+            list-style: none;
+            position: relative;
+            padding-left: 0;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        main li strong { color: #d32f2f; } /* 突出显示 CCF 分级 */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 850px) {
+            .container { flex-direction: column; margin-top: 0; }
+            .sidebar { width: 100%; }
+            .profile-card { position: relative; top: 0; }
+            main { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<header></header>
+
+<div class="container">
+    <aside class="sidebar">
+        <div class="profile-card">
+            <img src="{{ '/assets/avatar.jpg' | relative_url }}" alt="Qu Jianfeng" class="profile-pic">
+            <h2>瞿剑峰</h2>
+            <p>Jianfeng Qu</p>
+            <p>副教授 / 硕士生导师</p>
+            <p>中国人民大学 智慧治理学院</p>
+            
+            <div class="contact-info">
+                <div class="contact-item"><strong>Email:</strong> <a href="mailto:jfqu@ruc.edu.cn">jfqu@ruc.edu.cn</a></div>
+                <div class="contact-item"><strong>Addr:</strong> 中国·苏州</div>
+                <div class="contact-item"><strong>Links:</strong> <a href="https://dblp.org/pid/129/9411.html" target="_blank">DBLP</a></div>
+            </div>
         </div>
+    </aside>
 
+    <main>
         {{ content }}
-      </section>
-    </div>
+    </main>
+</div>
 
-    <footer class="inner">
-      <p class="copyright">项目由 <a href="https://github.com/{{ site.github.owner_name }}">@{{ site.github.owner_name }}</a> 维护</p>
-    </footer>
-  </body>
+<footer>
+    <p>&copy; {{ "now" | date: "%Y" }} Jianfeng Qu. All Rights Reserved. Built with GitHub Pages.</p>
+</footer>
+
+</body>
 </html>
