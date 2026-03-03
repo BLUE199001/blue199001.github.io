@@ -7,37 +7,55 @@
     <title>{{ site.title }}</title>
     
     <style>
-      /* 核心：限制整体页面的最大宽度，解决“太宽”的问题 */
+      /* 核心：限制整体页面的最大宽度，调小这个数值可以进一步缩窄 */
       .inner, .outer {
-        max-width: 850px; /* 调小这个数值可以进一步缩窄标题行 */
+        max-width: 800px; 
         margin: 0 auto;
         padding-left: 20px;
         padding-right: 20px;
       }
       
+      /* 极简 Header：减少 padding 压缩高度 */
+      header { 
+        padding: 10px 0; /* 从 20px 减小到 10px */
+        background-color: #333; /* 确保背景色可见 */
+      }
+      header h1 { 
+        font-size: 1.2rem; /* 减小标题字号 */
+        margin: 0; 
+        color: white;
+      }
+
       /* 个人信息栏布局 */
       .profile-container {
         display: flex;
         align-items: flex-start;
         gap: 25px;
-        padding: 30px 0;
+        padding: 20px 0; /* 减少内边距 */
         border-bottom: 1px solid #eee;
         margin-bottom: 20px;
       }
       
       /* 图片样式 */
       .profile-pic {
-        width: 150px;
+        width: 140px; /* 稍微调小一点 */
         height: auto;
         border-radius: 4px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: block;
       }
       
-      .info-text h1 { margin: 0 0 10px 0; font-size: 1.6em; }
-      .info-text p { margin: 4px 0; color: #555; font-size: 0.95em; }
+      .info-text h1 { margin: 0 0 8px 0; font-size: 1.5em; }
+      .info-text p { margin: 2px 0; color: #555; font-size: 0.9em; }
       
-      header {  padding: 20px 0; }
-      header h1 { font-size: 1.5rem; margin: 0; }
+      /* 极简 Footer：减少高度 */
+      footer { 
+        margin-top: 30px; 
+        padding: 10px 0; /* 减少 padding */
+        border-top: 1px solid #eee;
+        color: #999; 
+        font-size: 0.75em; 
+      }
 
       @media (max-width: 600px) {
         .profile-container { flex-direction: column; align-items: center; text-align: center; }
@@ -48,7 +66,7 @@
   <body>
     <header>
       <div class="inner">
-        <h1 style="color: white;">{{ site.title }}</h1>
+        <h1>{{ site.title }}</h1>
       </div>
     </header>
 
@@ -56,14 +74,14 @@
       <section id="main_content" class="inner">
         
         <div class="profile-container">
-          <img src="{{ site.baseurl }}/assets/avatar.jpg" alt="Profile" class="profile-pic">
+          <img src="{{ '/assets/avatar.jpg' | relative_url }}" alt="Profile" class="profile-pic">
           
           <div class="info-text">
             <h1>瞿剑峰 (Jianfeng Qu)</h1>
             <p><strong>职位：</strong>副教授，硕士生导师</p>
             <p><strong>单位：</strong>中国人民大学 智慧治理学院</p>
             <p><strong>邮箱：</strong><a href="mailto:jfqu@ruc.edu.cn">jfqu@ruc.edu.cn</a></p>
-            <p><strong>地址：</strong>中国·江苏·苏州</p>
+            <p><strong>地址：</strong>中国 · 江苏 · 苏州</p>
           </div>
         </div>
 
@@ -71,9 +89,8 @@
       </section>
     </div>
 
-    <footer class="inner" style="margin-top: 50px; color: #999; font-size: 0.8em;">
+    <footer class="inner">
       <p class="copyright">项目由 <a href="https://github.com/{{ site.github.owner_name }}">@{{ site.github.owner_name }}</a> 维护</p>
-      </div>
     </footer>
   </body>
 </html>
