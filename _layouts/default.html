@@ -9,7 +9,7 @@
         :root {
             --primary-color: #003366; /* 人大蓝 */
             --text-color: #333;
-            --bg-color: #f8f9fa;
+            --bg-color: #ffffff;
         }
 
         body {
@@ -21,7 +21,7 @@
             padding: 0;
         }
 
-        /* 顶部装饰条 */
+        /* 顶部 Header */
         header {
             height: 60px;
             background: var(--primary-color);
@@ -38,64 +38,47 @@
             padding: 0 20px;
         }
 
-        .inner-header h1 { margin: 0; font-size: 1.4rem; }
+        .inner-header h1 { font-size: 1.5rem; margin: 0; }
 
+        /* 核心：左右并排容器 */
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px 40px;
+            padding: 0 20px;
         }
 
-        /* 核心：确保左右结构的 Profile 区域 */
         .profile-section {
-            display: flex; /* 关键：开启弹性布局 */
-            flex-direction: row; /* 关键：水平排列 */
+            display: flex !important;   /* 强制开启 flex */
+            flex-direction: row !important; /* 强制横向排列 */
             align-items: flex-start;
-            gap: 40px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            gap: 40px;                  /* 照片和文字的间距 */
             margin-bottom: 30px;
         }
 
+        /* 左侧：照片固定宽度 */
         .profile-pic-container {
-            flex-shrink: 0; /* 防止图片被压缩 */
+            flex: 0 0 220px !important; /* 关键：固定220px，不放大不缩小 */
+            width: 220px;
         }
 
         .profile-pic {
-            width: 180px;
+            width: 100%;
             height: auto;
             border-radius: 8px;
-            border: 1px solid #eee;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             display: block;
         }
 
+        /* 右侧：文字信息 */
         .profile-info {
             flex: 1; /* 占据剩余空间 */
+            min-width: 0; /* 防止内部长文本撑破布局 */
         }
 
-        .profile-info h2 { margin: 0 0 10px 0; color: var(--primary-color); font-size: 1.8rem; }
-        .profile-info p { margin: 5px 0; font-size: 1rem; color: #444; }
-        
-        .contact-list {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-            list-style: none;
-            padding-left: 0;
-        }
-        .contact-list li { margin-bottom: 5px; font-size: 0.9rem; }
-        .contact-list strong { color: var(--primary-color); display: inline-block; width: 60px; }
+        .profile-info h2 { margin: 0 0 10px 0; color: var(--primary-color); }
+        .profile-info p { margin: 5px 0; }
 
-        /* 正文内容样式 */
-        .main-content {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
+        /* 正文 Markdown 样式 */
         h3 { 
             border-left: 5px solid var(--primary-color); 
             padding-left: 15px; 
@@ -103,14 +86,18 @@
             color: var(--primary-color);
         }
 
-        /* 响应式：手机端变为上下结构 */
+        /* 响应式：仅在手机端变为上下结构 */
         @media (max-width: 768px) {
             .profile-section {
-                flex-direction: column;
+                flex-direction: column !important;
                 align-items: center;
                 text-align: center;
             }
-            .contact-list { text-align: left; }
+            .profile-pic-container {
+                flex: 0 0 auto !important;
+                width: 200px;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -133,19 +120,18 @@
             <p><strong>副教授 / 硕士生导师</strong></p>
             <p>中国人民大学 智慧治理学院</p>
             <p>Email: <a href="mailto:jfqu@ruc.edu.cn">jfqu@ruc.edu.cn</a></p>
-
         </div>
     </section>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
 
     <main class="main-content">
         {{ content }}
     </main>
 </div>
 
-<footer>
-    <div style="text-align: center; padding: 40px 0; color: #999; font-size: 0.8rem;">
-        &copy; {{ "now" | date: "%Y" }} Jianfeng Qu. All Rights Reserved.
-    </div>
+<footer style="text-align: center; padding: 40px 0; color: #999; font-size: 0.8rem;">
+    &copy; {{ "now" | date: "%Y" }} Jianfeng Qu.
 </footer>
 
 </body>
