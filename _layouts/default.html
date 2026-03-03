@@ -9,7 +9,7 @@
     <style>
       /* 核心：限制整体页面的最大宽度，解决“太宽”的问题 */
       .inner, .outer {
-        max-width: 850px; /* 调小这个数值可以进一步缩窄标题行 */
+        max-width: 650px; /* 调小这个数值可以进一步缩窄标题行 */
         margin: 0 auto;
         padding-left: 20px;
         padding-right: 20px;
@@ -36,7 +36,7 @@
       .info-text h1 { margin: 0 0 10px 0; font-size: 1.6em; }
       .info-text p { margin: 4px 0; color: #555; font-size: 0.95em; }
       
-      header { background: #f4f4f4; padding: 20px 0; }
+      header {  padding: 20px 0; }
       header h1 { font-size: 1.5rem; margin: 0; }
 
       @media (max-width: 600px) {
@@ -72,7 +72,8 @@
     </div>
 
     <footer class="inner" style="margin-top: 50px; color: #999; font-size: 0.8em;">
-      <p>&copy; {{ "now" | date: "%Y" }} {{ site.github.owner_name }}. Built with GitHub Pages.</p>
+      <p class="copyright">项目由 <a href="https://github.com/{{ site.github.owner_name }}">@{{ site.github.owner_name }}</a> 维护</p>
+      </div>
     </footer>
   </body>
 </html>
