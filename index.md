@@ -33,13 +33,8 @@
 * Towards Unifying Multi-Lingual and Cross-Lingual Summarization.(ACL 2023)(**CCF A**)
 * MMKGR: Multi-hop Multi-modal Knowledge Graph Reasoning.(ICDE 2023)(**CCF A**)
 * Frequency Enhanced Hybrid Attention Network for Sequential Recommendation.(SIGIR 2023)(**CCF A**)
-
-
 * Ensemble Semi-supervised Entity Alignment via Cycle-Teaching.(AAAI 2022)(**CCF A**)
 * A noise-aware method with type constraint pattern for neural relation extraction.(TKDE 2021)(**CCF A**)
-
-
-
 * Concept-aware embedding for logical query reasoning over knowledge graphs.(IPM 2025)(**CCF B**) 
 * MRCLQR: A Framework for Logical Query Reasoning Based on Multi-information Relation Constraints.(CIKM 2025)(**CCF B**)
 * Transfer-learning-based representation learning for trajectory similarity search.(GeoInformatica 2024)(**CCF B**)
@@ -71,9 +66,6 @@
 * Sportssum2. 0: Generating high-quality sports news from live text commentary.(CIKM 2021)(**CCF B**)
 * Summarizing long-form document with rich discourse information.(CIKM 2021)(**CCF B**)
 * Temporal knowledge completion with context-aware embeddings.(World Wide Web 2021)(**CCF B**)
-* A fine-grained and noise-aware method for neural relation extraction.(CIKM 2019)(**CCF B**)
-* Discovering correlations between sparse features in distant supervision for relation extraction.(WSDM 2021)(**CCF B**)
-* Distant supervision for neural relation extraction integrated with word attention and property features.(Neural Networks 2018)(**CCF B**)
 
 
 
