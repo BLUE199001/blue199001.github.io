@@ -13,9 +13,9 @@
 * Knowledge graphs
 * Data mining
 
-### 2. Publications
+### 2. Publications(selected)
 * Expert Heads: Robust Evidence Identification for Large Language Models.(ICLR 2026)(**CCF A**)
-* Towards Practical LLM Unlearning: Efficient, Modular, and Retain-Free.(WWW 2026)(**CCF A**)
+* Towards Practical LLM Unlearning: Efficient, Modular, and Retain-Frees.(WWW 2026)(**CCF A**)
 * Balancing Positive and Negative Classification Error Rates in Positive-Unlabeled Learning.(NeurIPS 2025)(**CCF A**)
 * TMLKD: Few-shot Trajectory Metric Learning via Knowledge Distillation.(VLDB 2025)(**CCF A**)
 * Enhancing Long-and Short-Term Representations for Next POI Recommendations via Frequency and Hierarchical Contrastive Learning.(AAAI 2025 oral)(**CCF A**)
