@@ -28,7 +28,6 @@
 * MusTQ: A Temporal Knowledge Graph Question Answering Dataset for Multi-Step Temporal Reasoning.(ACL 2024)(**CCF A**)
 * GeoAgent: To Empower LLMs using Geospatial Tools for Address Standardization.(ACL 2024)(**CCF A**)
 * Evidence Reasoning and Curriculum Learning for Document-Level Relation Extraction.(TKDE 2023)(**CCF A**)
-* A Noise-Aware Method With Type Constraint Pattern for Neural Relation Extraction.(TKDE 2023)(**CCF A**)
 * Competition or Cooperation? Exploring Unlabeled Data via Challenging Minimax Game for Semi-supervised Relation Extraction.(AAAI 2023)(**CCF A**)
 * Towards Unifying Multi-Lingual and Cross-Lingual Summarization.(ACL 2023)(**CCF A**)
 * MMKGR: Multi-hop Multi-modal Knowledge Graph Reasoning.(ICDE 2023)(**CCF A**)
